@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body style="background-color: gray;">
+
+	<script>
+		/*
+			Запросите у пользователя любое число. На основании ответа создайте массив и
+			заполните его числами от нуля до введённого числа. Не забудьте привести
+			полученное от пользователя значение к типу number.
+		*/
+
+		const src = prompt("Введите число");
+
+		let arr = [];
+
+		for(let i = 0; i <= +src; ++i)
+			arr.push(i);
+
+		console.log(arr);
+
+	</script>
+
+</body>
+
+</html>

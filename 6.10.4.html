@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body style="background-color: gray;">
+
+	<script>
+		/*
+			Перепишите задание 6.10.3.
+			Определите остаток от деления количества лет на 10. В зависимости от этого
+			выведите в алерт «Антон: 21 год» или «Антон: 24 года», или «Антон: 25 лет».
+			То есть для всех чисел с 1 в конце должно быть «_1 год», для чисел с 2, 3, 4
+			в конце – «_3 года», а для всех остальных – «_7 лет».
+		*/
+
+		const name = prompt("Как вас зовут?");
+		const year = +prompt("Введите год своего рождения?");
+
+		if(!Number.isInteger(year))
+		{
+			alert("Год не число или пустое имя.");
+		}
+		else
+		{
+			const age = 2024 - year;
+			let text = `${name}: ${age} `;
+
+			switch(age % 10)
+			{
+				case 1:
+					text += "год";
+					break;
+
+				case 2:
+				case 3:
+				case 4:
+					text += "года";
+					break;
+					
+				default:
+					text += "лет";
+			}
+
+			alert(text);
+		}
+
+	</script>
+
+</body>
+
+</html>

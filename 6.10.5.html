@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Кредитный калькулятор</title>
+</head>
+
+<body>
+	<ul>
+		<li>если клиенту нет 18 лет, то кредит он не получит</li>
+		<li>если клиенту от 18 до 21, то он может получить максимум 50000</li>
+		<li>если клиенту от 22 до 35, то он сможет получить максимум 400000</li>
+		<li>если клиенту от 36 до 65, то ему одобрят максимум 1000000</li>
+		<li>кредит могут выдавать суммами кратными 10000.</li>
+	</ul>
+
+	<script>
+
+		let age = prompt("Введите ваш возраст");
+
+		if(age == null ||
+			age === "" ||
+			!Number.isInteger(+age))
+		{
+			alert("Некорректное значение возраста.");
+		}
+		else
+		{
+			age = +age;
+
+			if(age < 18)
+			{
+				alert("Вы слишком молоды.\nМы не можем выдать вам кредит.");
+			}
+			else
+			{
+				let maxLoan;
+				if(age <= 21)
+					maxLoan = 50000;
+				else if(age <= 35)
+					maxLoan = 400000;
+				else if(age <= 65)
+					maxLoan = 1000000;
+
+				if(maxLoan == undefined)
+				{
+					alert("Ваш возраст превышает допустимый (65 лет).\nМы не можем выдать вам кредит.");
+				}
+				else
+				{
+					let reqLoan = prompt(`Мы можем вам выдать максимум ${maxLoan}.\n` +
+						"Введите сумму кратную 1000.");
+
+					if(reqLoan == null)
+					{
+						alert("Видимо вам кредит не нужен.\nВсего доброго.");
+					}
+					else if(reqLoan === "" ||
+						!Number.isInteger(+reqLoan))
+					{
+						alert("Некорректное значение запрашиваемого кредита.");
+					}
+					else
+					{
+						reqLoan = +reqLoan;
+
+						if(reqLoan <= 0)
+						{
+							alert("Видимо вам кредит не нужен.\nВсего доброго.");
+						}
+						else if(reqLoan > maxLoan)
+						{
+							alert("Запрашиваемый кредит превышает допустимый.\nМы не можем выдать вам кредит.");
+						}
+						else
+						{
+							if(reqLoan % 1000 != 0)
+							{
+								reqLoan = reqLoan - reqLoan % 1000;
+								alert(`Вы ввели значение не кратное 1000. Мы можем выдать ${reqLoan}.`);
+							}
+
+							alert(`Ваш кредит равен ${reqLoan}`);
+						}
+					}
+				}
+			}
+		}
+
+	</script>
+</body>
+
+</html>

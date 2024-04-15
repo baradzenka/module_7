@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body style="background-color: gray;">
+
+	<script>
+		/*
+			Есть объект obj. В одном из ключей объекта — массив. Добавьте в новый массив arrValues
+			значения всех ключей объекта. Если значение — массив, добавьте каждый элемент в массив arrValues.
+			Выведите получившийся массив в консоль.
+		*/
+
+		const obj = {
+			some: 'some',
+			dom: 'text',
+			arr: [1, 2, 3, 4, 5],
+			tom: 'there'
+    	};
+
+		let text = "";
+
+		for(const v of Object.values(obj))
+		{
+			if(!Array.isArray(v))
+			{
+				text += (text === "" ? "[" : ", ");
+				text += (typeof(v)==="string" ? `"${v}"` : v);
+			}
+			else
+			{
+				for(const vs of v)
+				{
+					text += (text === "" ? "[" : ", ");
+					text += (typeof(vs)==="string" ? `"${vs}"` : vs);
+				}
+			}
+		}
+		text += "]";
+
+		console.log(text);
+
+	</script>
+
+</body>
+
+</html>

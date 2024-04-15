@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body style="background-color: gray;">
+
+	<script>
+		/*
+			Напишите скрипт, который с помощью метода prompt() запрашивает у пользователя
+			любое число. И после этого выводит на экран в методе alert():
+				в первой строке — само число;
+				во второй строке — квадрат этого числа;
+				в третьей строке — куб этого числа.
+		*/
+
+		const src = +prompt("Введите число");
+
+		alert(`Введённое число - ${src}\n` +
+			`Квадрат числа - ${src*src}\n` +
+			`Куб числа - ${src**3}`);
+
+	</script>
+
+</body>
+
+</html>

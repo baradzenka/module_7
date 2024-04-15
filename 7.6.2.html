@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body style="background-color: gray;">
+
+	<script>
+		/*
+			Создайте новый массив и запишите в него только уникальные значения из массива arr.
+			Выведите получившийся массив в консоль.
+		*/
+
+		const src = [1, 2, 3, 1, 5, 4, 2, 3, 5, 'they', 'don\'t', 'know', 'that', 'we', 'know', 'that', 'they', 'know' ];
+
+		const arr = new Set(src);
+
+		let text = "";
+		for(const v of arr)
+		{
+			text += (text === "" ? "[" : ", ");
+			text += (typeof(v)==="string" ? `'${v}'` : v);
+		}
+		text += "];";
+
+		console.log(text);
+
+	</script>
+
+</body>
+
+</html>

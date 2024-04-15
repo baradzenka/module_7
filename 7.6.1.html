@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body style="background-color: gray;">
+
+	<script>
+		/*
+			Напишите проверку, которая позволит определить, является слово палиндромом или нет.
+		*/
+
+		const src = "Довод";   // Пример №1
+//		const src = "Сантимент";   // Пример №2
+
+		let palindrome = true;
+
+		const numIter = Math.floor(src.length / 2);
+		const lastItem = src.length - 1;
+
+		for(let i = 0; i < numIter; ++i)
+		{
+			const s1 = src[i].toLowerCase();
+			const s2 = src[lastItem-i].toLowerCase();
+			
+			if(s1 !== s2)
+			{
+				palindrome = false;
+				break;
+			}
+		}
+
+		if(palindrome)
+		{
+			console.log(`Слово ${src} является палиндромом`);
+		}
+		else
+		{
+			console.log(`Слово ${src} не является палиндромом`);
+		}
+
+	</script>
+
+</body>
+
+</html>
