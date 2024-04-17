@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body style="background-color: gray;">
+
+	<script>
+		/*
+			Напишите функцию, которая принимает массив чисел и возвращает новый массив,
+			содержащий только уникальные числа, отсортированные в порядке возрастания.
+		*/
+
+		const arr = [1,-2,20,1,0,200,15,-70,20,-5,200];
+		
+		const func = function (arr) {
+
+			const arrFiltered = arr.filter(
+					(elem, idx, array) => array.indexOf(elem) == idx
+				);
+			// OR
+			//const arrFiltered = Array.from( new Set(arr) );
+
+			const compFunc = (a, b) => (a < b ? -1 : (a > b ? 1 : 0));
+			return arrFiltered.toSorted(compFunc);
+		};
+
+		const resArr = func(arr);
+
+	</script>
+
+</body>
+
+</html>

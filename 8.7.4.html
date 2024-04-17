@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body style="background-color: gray;">
+
+	<script>
+		/*
+			Создайте функцию setFullName, которая будет устанавливать свойство fullName
+			у переданного ей объекта. Используйте метод bind, чтобы создать новую функцию
+			setPersonFullName, которая будет устанавливать fullName для объекта person
+			из предыдущего примера. Вызовите setPersonFullName с параметром "John Smith" и
+			убедитесь, что свойство fullName объекта person было изменено соответствующим образом.
+		*/
+
+		const setFullName = function (fullName) {
+			this.fullName = fullName;
+		};
+		
+		const person = {
+			firstName: "Alex",
+			secondName: "Johnson",
+			fullName: "Alex Johnson"
+		};
+
+		const setPersonFullName = setFullName.bind(person);
+
+		setPersonFullName("John Smith");
+		console.log(person);
+
+	</script>
+
+</body>
+
+</html>

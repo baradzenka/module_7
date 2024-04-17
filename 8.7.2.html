@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body style="background-color: gray;">
+
+	<script>
+		/*
+			Создайте функцию calculate, которая будет принимать три параметра: a, b и operator.
+			Функция должна производить математическую операцию между a и b в зависимости от
+			значения operator (может быть "+", "-", "*" или "/") и возвращать результат операции.
+			Используйте метод apply, чтобы вызвать функцию calculate с передачей объекта
+			со значениями a, b и operator в качестве первого аргумента и массива с тремя
+			значениями [2, 3, "+"] в качестве второго аргумента.
+		*/
+
+		const calculate = function (a, b, operator) {
+			switch(operator)
+			{
+				case "+": return a + b;
+				case "-": return a - b;
+				case "*": return a * b;
+				case "/": return a / b;
+			}
+		};
+
+		const obj = {
+			a: 10,
+			b: 20,
+			operator: "*"
+		};
+
+		const res = calculate.apply(obj, [2,3,"+"]);
+
+	</script>
+
+</body>
+
+</html>
