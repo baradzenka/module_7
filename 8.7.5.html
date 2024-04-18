@@ -25,6 +25,8 @@
 			// OR
 			//const arrFiltered = Array.from( new Set(arr) );
 
+			// Вызов toSorted без параметров в данном случае некорректно выполняет сортировку.
+			// В результате пришлось явно указать предикат сортировки.
 			const compFunc = (a, b) => (a < b ? -1 : (a > b ? 1 : 0));
 			return arrFiltered.toSorted(compFunc);
 		};
