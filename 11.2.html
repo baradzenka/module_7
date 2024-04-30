@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<style>
+		body {
+			background-color: gray;
+
+			width: 4000px;
+			height: 3000px;
+		}
+		button {
+			padding: 8px 24px;
+
+			position: absolute;
+			left: 400px;
+			top: 400px;
+
+			border: none;
+			border-radius: 6px;
+
+			display: flex;
+    		column-gap: 15px;
+    		align-items: center;			
+
+			font-size: 16px;
+			color: white;
+			background-color: #0c66e9;
+		}
+		button:hover {
+			color: #fffc;
+		}
+	</style>
+
+	<title>Document</title>
+</head>
+
+<body>
+
+	<button type="button" onclick="OnBtnClick()">Окно можно скроллить</button>
+
+	<script>
+		/*
+			Сверстайте кнопку, клик на которую будет выводить данные о размерах экрана с помощью alert. 
+		*/
+
+		function OnBtnClick()
+		{
+			const text1 = `Ширина видимой части документа:  ${document.documentElement.clientWidth} px\n` +
+				`Высота видимой части документа:  ${document.documentElement.clientHeight} px`;
+
+			const scrollWidth = Math.max(
+				document.body.scrollWidth, document.documentElement.scrollWidth,
+				document.body.offsetWidth, document.documentElement.offsetWidth,
+				document.body.clientWidth, document.documentElement.clientWidth);
+			const scrollHeight = Math.max(
+				document.body.scrollHeight, document.documentElement.scrollHeight,
+				document.body.offsetHeight, document.documentElement.offsetHeight,
+				document.body.clientHeight, document.documentElement.clientHeight);
+			const text2 = `Ширина документа с учётом прокрутки страницы:  ${scrollWidth} px\n` +
+				`Высота документа с учётом прокрутки страницы:  ${scrollHeight} px`;
+
+			const text3 = `Текущая прокрутка по горизонтали:  ${window.pageXOffset} px\n` +
+				`Текущая прокрутка по вертикали:  ${window.pageYOffset} px`;				
+
+			alert(text1 + "\n\n" + text2 + "\n\n" + text3);
+		}
+
+	</script>
+
+</body>
+
+</html>
